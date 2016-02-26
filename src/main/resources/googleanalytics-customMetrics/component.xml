@@ -18,26 +18,27 @@
 -->
 
 <component name="googleanalytics-customMetrics" type="synapse/template">
-   <subComponents>
-      <component name="listCustomMetrics">
-         <file>listCustomMetrics.xml</file>
-         <description>Retrieve a list of customMetrics from GoogleAnalytics account.</description>
-      </component>
-      <component name="getCustomMetric">
-         <file>getCustomMetric.xml</file>
-         <description>Retrieve details of a customMetrics identified by the provided customMetrics ID.</description>
-      </component>
-      <component name="createCustomMetric">
-         <file>createCustomMetric.xml</file>
-         <description>Create a new customMetrics in GoogleAnalytics account using the provided Parameters.</description>
-      </component>
-      <component name="updateCustomMetric">
-         <file>updateCustomMetric.xml</file>
-         <description>Update details of the customMetrics identified by the provided customMetrics ID.</description>
-      </component>
-      <component name="patchCustomMetric">
-         <file>patchCustomMetric.xml</file>
-         <description>Updates an existing custom metric. This method supports patch semantics.</description>
-      </component>
-   </subComponents>
+    <subComponents>
+        <component name="listCustomMetrics">
+            <file>listCustomMetrics.xml</file>
+            <description>Retrieve a list of customMetrics from GoogleAnalytics account.</description>
+        </component>
+        <component name="getCustomMetric">
+            <file>getCustomMetric.xml</file>
+            <description>Retrieve details of a customMetrics identified by the provided customMetrics ID.</description>
+        </component>
+        <component name="createCustomMetric">
+            <file>createCustomMetric.xml</file>
+            <description>Create a new customMetrics in GoogleAnalytics account using the provided Parameters.
+            </description>
+        </component>
+        <component name="updateCustomMetric">
+            <file>updateCustomMetric.xml</file>
+            <description>Update details of the customMetrics identified by the provided customMetrics ID.</description>
+        </component>
+        <component name="patchCustomMetric">
+            <file>patchCustomMetric.xml</file>
+            <description>Updates an existing custom metric. This method supports patch semantics.</description>
+        </component>
+    </subComponents>
 </component>

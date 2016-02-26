@@ -18,10 +18,10 @@
 -->
 
 <component name="googleanalytics-accounts" type="synapse/template">
-   <subComponents>
-      <component name="listAccounts">
-         <file>listAccounts.xml</file>
-         <description>Retrieve a list of accounts from GoogleAnalytics account.</description>
-      </component>
-   </subComponents>
+    <subComponents>
+        <component name="listAccounts">
+            <file>listAccounts.xml</file>
+            <description>Retrieve a list of accounts from GoogleAnalytics account.</description>
+        </component>
+    </subComponents>
 </component>

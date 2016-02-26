@@ -18,30 +18,30 @@
 -->
 
 <connector>
-   <component name="googleanalytics" package="org.wso2.carbon.connector">
-      <dependency component="googleanalytics-customDimensions"/>
-      <dependency component="googleanalytics-customDataSources"/>
-      <dependency component="googleanalytics-experiments"/>
-      <dependency component="googleanalytics-reportData"/>
-      <dependency component="googleanalytics-accountSummaries"/>
-      <dependency component="googleanalytics-adWordsLinks"/>
-      <dependency component="googleanalytics-filters"/>
-      <dependency component="googleanalytics-segments"/>
-      <dependency component="googleanalytics-accountUserLinks"/>
-      <dependency component="googleanalytics-customMetrics"/>
-      <dependency component="googleanalytics-metaData"/>
-      <dependency component="googleanalytics-accounts"/>
-      <dependency component="googleanalytics-config"/>
-      <dependency component="googleanalytics-multiChannelFunnelsData"/>
-      <dependency component="googleanalytics-views"/>
-      <dependency component="googleanalytics-goals"/>
-      <dependency component="googleanalytics-uploads"/>
-      <dependency component="googleanalytics-webProperties"/>
-      <dependency component="googleanalytics-webPropertyUserLink"/>
-      <dependency component="googleanalytics-profileUserLink"/>
-      <dependency component="googleanalytics-profileFilterLink"/>
+    <component name="googleanalytics" package="org.wso2.carbon.connector">
+        <dependency component="googleanalytics-customDimensions"/>
+        <dependency component="googleanalytics-customDataSources"/>
+        <dependency component="googleanalytics-experiments"/>
+        <dependency component="googleanalytics-reportData"/>
+        <dependency component="googleanalytics-accountSummaries"/>
+        <dependency component="googleanalytics-adWordsLinks"/>
+        <dependency component="googleanalytics-filters"/>
+        <dependency component="googleanalytics-segments"/>
+        <dependency component="googleanalytics-accountUserLinks"/>
+        <dependency component="googleanalytics-customMetrics"/>
+        <dependency component="googleanalytics-metaData"/>
+        <dependency component="googleanalytics-accounts"/>
+        <dependency component="googleanalytics-config"/>
+        <dependency component="googleanalytics-multiChannelFunnelsData"/>
+        <dependency component="googleanalytics-views"/>
+        <dependency component="googleanalytics-goals"/>
+        <dependency component="googleanalytics-uploads"/>
+        <dependency component="googleanalytics-webProperties"/>
+        <dependency component="googleanalytics-webPropertyUserLink"/>
+        <dependency component="googleanalytics-profileUserLink"/>
+        <dependency component="googleanalytics-profileFilterLink"/>
 
-       <description>WSO2 ESB Connector Library for GoogleAnalytics API.</description>
-   </component>
-   <icon>icon/icon-small.gif</icon>
+        <description>WSO2 ESB Connector Library for GoogleAnalytics API.</description>
+    </component>
+    <icon>icon/icon-small.gif</icon>
 </connector>

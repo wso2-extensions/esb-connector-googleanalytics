@@ -18,26 +18,26 @@
 -->
 
 <component name="googleanalytics-experiments" type="synapse/template">
-   <subComponents>
-      <component name="listExperiments">
-         <file>listExperiments.xml</file>
-         <description>Retrieve a list of experiments from GoogleAnalytics account.</description>
-      </component>
-      <component name="createExperiment">
-         <file>createExperiment.xml</file>
-         <description>Retrieve a list of experiments from GoogleAnalytics account.</description>
-      </component>
-      <component name="getExperiment">
-         <file>getExperiment.xml</file>
-         <description>Retrieve details of a experiment identified by the provided experiment ID.</description>
-      </component>
-      <component name="updateExperiment">
-         <file>updateExperiment.xml</file>
-         <description>Update details of the experiment identified by the provided experiment ID.</description>
-      </component>
-      <component name="patchExperiment">
-         <file>patchExperiment.xml</file>
-         <description>Update an existing experiment. This method supports patch semantics.</description>
-      </component>
-   </subComponents>
+    <subComponents>
+        <component name="listExperiments">
+            <file>listExperiments.xml</file>
+            <description>Retrieve a list of experiments from GoogleAnalytics account.</description>
+        </component>
+        <component name="createExperiment">
+            <file>createExperiment.xml</file>
+            <description>Retrieve a list of experiments from GoogleAnalytics account.</description>
+        </component>
+        <component name="getExperiment">
+            <file>getExperiment.xml</file>
+            <description>Retrieve details of a experiment identified by the provided experiment ID.</description>
+        </component>
+        <component name="updateExperiment">
+            <file>updateExperiment.xml</file>
+            <description>Update details of the experiment identified by the provided experiment ID.</description>
+        </component>
+        <component name="patchExperiment">
+            <file>patchExperiment.xml</file>
+            <description>Update an existing experiment. This method supports patch semantics.</description>
+        </component>
+    </subComponents>
 </component>

@@ -18,10 +18,10 @@
 -->
 
 <component name="googleanalytics-multiChannelFunnelsData" type="synapse/template">
-   <subComponents>
-      <component name="listMultiChannelFunnelsReportData">
-         <file>listMultiChannelFunnelsReportData.xml</file>
-         <description>Retrieve a list of multiChannelFunnelsReportData from GoogleAnalytics account.</description>
-      </component>
-   </subComponents>
+    <subComponents>
+        <component name="listMultiChannelFunnelsReportData">
+            <file>listMultiChannelFunnelsReportData.xml</file>
+            <description>Retrieve a list of multiChannelFunnelsReportData from GoogleAnalytics account.</description>
+        </component>
+    </subComponents>
 </component>

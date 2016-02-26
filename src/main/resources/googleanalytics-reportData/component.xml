@@ -18,10 +18,10 @@
 -->
 
 <component name="googleanalytics-reportData" type="synapse/template">
-   <subComponents>
-      <component name="getReportData">
-         <file>getReportData.xml</file>
-         <description>Retrieve details of a reportData identified by the provided reportData ID.</description>
-      </component>
-   </subComponents>
+    <subComponents>
+        <component name="getReportData">
+            <file>getReportData.xml</file>
+            <description>Retrieve details of a reportData identified by the provided reportData ID.</description>
+        </component>
+    </subComponents>
 </component>

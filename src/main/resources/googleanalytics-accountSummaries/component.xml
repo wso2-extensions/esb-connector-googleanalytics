@@ -18,10 +18,10 @@
 -->
 
 <component name="googleanalytics-accountSummaries" type="synapse/template">
-   <subComponents>
-      <component name="listAccountSummaries">
-         <file>listAccountSummaries.xml</file>
-         <description>Retrieve a list of accountSummaries from GoogleAnalytics account.</description>
-      </component>
-   </subComponents>
+    <subComponents>
+        <component name="listAccountSummaries">
+            <file>listAccountSummaries.xml</file>
+            <description>Retrieve a list of accountSummaries from GoogleAnalytics account.</description>
+        </component>
+    </subComponents>
 </component>

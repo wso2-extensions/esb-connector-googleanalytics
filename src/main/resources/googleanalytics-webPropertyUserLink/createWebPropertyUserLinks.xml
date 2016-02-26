@@ -20,26 +20,26 @@
 <!-- Method Documentation URL: https://developers.google.com/analytics/devguides/config/mgmt/v3/mgmtReference/management/accounts/list -->
 <template name="createWebPropertyUserLinks" xmlns="http://ws.apache.org/ns/synapse">
 
-    <parameter name="accountId" description="Account ID to retrieve the views." />
-    <parameter name="webPropertyId" description="Returns response with indentations and line breaks." />
-    <parameter name="id" description="The maximum number of views to include in this response" />
-    <parameter name="selfLink" description="The starting index of the resources." />
-    <parameter name="kind" description="The starting index of the resources." />
-    <parameter name="fields" description="option results in response." />
-    <parameter name="permissions" description="The starting index of the resources." />
-    <parameter name="userRef" description="option results in response." />
+    <parameter name="accountId" description="Account ID to retrieve the views."/>
+    <parameter name="webPropertyId" description="Returns response with indentations and line breaks."/>
+    <parameter name="id" description="The maximum number of views to include in this response"/>
+    <parameter name="selfLink" description="The starting index of the resources."/>
+    <parameter name="kind" description="The starting index of the resources."/>
+    <parameter name="fields" description="option results in response."/>
+    <parameter name="permissions" description="The starting index of the resources."/>
+    <parameter name="userRef" description="option results in response."/>
 
     <sequence>
-        <property name="uri.var.accountId" expression="$func:accountId" />
-        <property name="uri.var.webPropertyId" expression="$func:webPropertyId" />
-        <property name="uri.var.id" expression="$func:id" />
-        <property name="uri.var.selfLink" expression="$func:selfLink" />
-        <property name="uri.var.kind" expression="$func:kind" />
-        <property name="uri.var.permissions" expression="$func:permissions" />
-        <property name="uri.var.userRef" expression="$func:userRef" />
+        <property name="uri.var.accountId" expression="$func:accountId"/>
+        <property name="uri.var.webPropertyId" expression="$func:webPropertyId"/>
+        <property name="uri.var.id" expression="$func:id"/>
+        <property name="uri.var.selfLink" expression="$func:selfLink"/>
+        <property name="uri.var.kind" expression="$func:kind"/>
+        <property name="uri.var.permissions" expression="$func:permissions"/>
+        <property name="uri.var.userRef" expression="$func:userRef"/>
 
-        <property name="uri.var.apiParameters" value="" />
-        <property name="uri.var.fields" expression="$func:fields" />
+        <property name="uri.var.apiParameters" value=""/>
+        <property name="uri.var.fields" expression="$func:fields"/>
 
         <payloadFactory media-type="json">
             <format>
@@ -49,8 +49,8 @@
                 }
             </format>
             <args>
-                <arg expression="get-property('uri.var.permissions')" />
-                <arg expression="get-property('uri.var.userRef')" />
+                <arg expression="get-property('uri.var.permissions')"/>
+                <arg expression="get-property('uri.var.userRef')"/>
             </args>
         </payloadFactory>
         <script language="js">
@@ -88,28 +88,29 @@
 
         <call>
             <endpoint>
-                <http method="Post" uri-template="{+uri.var.apiUrl}/analytics/v3/management/accounts/{+uri.var.accountId}/webproperties/{+uri.var.webPropertyId}/entityUserLinks?{+uri.var.apiParameters}" />
+                <http method="Post"
+                      uri-template="{+uri.var.apiUrl}/analytics/v3/management/accounts/{+uri.var.accountId}/webproperties/{+uri.var.webPropertyId}/entityUserLinks?{+uri.var.apiParameters}"/>
             </endpoint>
         </call>
-        <property name="uri.var.statusCode" expression="$axis2:HTTP_SC" />
+        <property name="uri.var.statusCode" expression="$axis2:HTTP_SC"/>
         <!-- If the call fails with 401 Unauthorized, then get a new access token by calling getAccessTokenFromRefreshToken
            method. -->
         <filter xpath="get-property('uri.var.statusCode') = 401 and get-property('uri.var.refreshTokenNegotiated') = 'false'">
             <then>
-                <googleanalytics.getAccessTokenFromRefreshToken />
+                <googleanalytics.getAccessTokenFromRefreshToken/>
                 <header name="Authorization" expression="fn:concat('Bearer ', get-property('uri.var.accessToken'))"
-                        scope="transport" />
+                        scope="transport"/>
                 <googleanalytics.createWebPropertyUserLinks/>
             </then>
         </filter>
         <!-- Remove custom Headers from the API Response -->
-        <header name="X-Frame-Options" action="remove" scope="transport" />
-        <header name="Expires" action="remove" scope="transport" />
-        <header name="X-XSS-Protection" action="remove" scope="transport" />
-        <header name="Alternate-Protocol" action="remove" scope="transport" />
-        <header name="X-Content-Type-Options" action="remove" scope="transport" />
-        <header name="Alt-Svc" action="remove" scope="transport" />
-        <header name="Cache-Control" action="remove" scope="transport" />
-        <header name="Pragma" action="remove" scope="transport" />
+        <header name="X-Frame-Options" action="remove" scope="transport"/>
+        <header name="Expires" action="remove" scope="transport"/>
+        <header name="X-XSS-Protection" action="remove" scope="transport"/>
+        <header name="Alternate-Protocol" action="remove" scope="transport"/>
+        <header name="X-Content-Type-Options" action="remove" scope="transport"/>
+        <header name="Alt-Svc" action="remove" scope="transport"/>
+        <header name="Cache-Control" action="remove" scope="transport"/>
+        <header name="Pragma" action="remove" scope="transport"/>
     </sequence>
 </template>

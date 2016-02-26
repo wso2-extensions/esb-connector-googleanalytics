@@ -18,10 +18,10 @@
 -->
 
 <component name="googleanalytics-customDataSources" type="synapse/template">
-   <subComponents>
-      <component name="listCustomDataSources">
-         <file>listCustomDataSources.xml</file>
-         <description>Retrieve a list of customDataSources from GoogleAnalytics account.</description>
-      </component>
-   </subComponents>
+    <subComponents>
+        <component name="listCustomDataSources">
+            <file>listCustomDataSources.xml</file>
+            <description>Retrieve a list of customDataSources from GoogleAnalytics account.</description>
+        </component>
+    </subComponents>
 </component>

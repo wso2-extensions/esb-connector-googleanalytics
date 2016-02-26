@@ -18,22 +18,26 @@
 -->
 
 <component name="googleanalytics-accountUserLinks" type="synapse/template">
-   <subComponents>
-      <component name="listAccountUserLinks">
-         <file>listAccountUserLinks.xml</file>
-         <description>Retrieve a list of accountUserLinks from GoogleAnalytics account.</description>
-      </component>
-      <component name="createAccountUserLink">
-         <file>createAccountUserLink.xml</file>
-         <description>Create a new accountUserLink in GoogleAnalytics account using the provided Parameters.</description>
-      </component>
-      <component name="updateAccountUserLink">
-         <file>updateAccountUserLink.xml</file>
-         <description>Update details of the accountUserLink identified by the provided accountUserLink ID.</description>
-      </component>
-      <component name="deleteAccountUserLink">
-         <file>deleteAccountUserLink.xml</file>
-         <description>Delete the accountUserLink identified by the provided accountUserLink ID from GoogleAnalytics account.</description>
-      </component>
-   </subComponents>
+    <subComponents>
+        <component name="listAccountUserLinks">
+            <file>listAccountUserLinks.xml</file>
+            <description>Retrieve a list of accountUserLinks from GoogleAnalytics account.</description>
+        </component>
+        <component name="createAccountUserLink">
+            <file>createAccountUserLink.xml</file>
+            <description>Create a new accountUserLink in GoogleAnalytics account using the provided Parameters.
+            </description>
+        </component>
+        <component name="updateAccountUserLink">
+            <file>updateAccountUserLink.xml</file>
+            <description>Update details of the accountUserLink identified by the provided accountUserLink ID.
+            </description>
+        </component>
+        <component name="deleteAccountUserLink">
+            <file>deleteAccountUserLink.xml</file>
+            <description>Delete the accountUserLink identified by the provided accountUserLink ID from GoogleAnalytics
+                account.
+            </description>
+        </component>
+    </subComponents>
 </component>

@@ -18,26 +18,29 @@
 -->
 
 <component name="googleanalytics-customDimensions" type="synapse/template">
-   <subComponents>
-      <component name="listCustomDimensions">
-         <file>listCustomDimensions.xml</file>
-         <description>Retrieve a list of customDimensions from GoogleAnalytics account.</description>
-      </component>
-      <component name="createCustomDimension">
-         <file>createCustomDimension.xml</file>
-         <description>Create a new customDimension in GoogleAnalytics account using the provided Parameters.</description>
-      </component>
-      <component name="getCustomDimension">
-         <file>getCustomDimension.xml</file>
-         <description>Retrieve details of a customDimension identified by the provided customDimension ID.</description>
-      </component>
-      <component name="updateCustomDimension">
-         <file>updateCustomDimension.xml</file>
-         <description>Update details of the customDimension identified by the provided customDimension ID.</description>
-      </component>
-      <component name="patchCustomDimension">
-         <file>patchCustomDimension.xml</file>
-         <description>pdates an existing custom dimension. This method supports patch semantics. </description>
-      </component>
-   </subComponents>
+    <subComponents>
+        <component name="listCustomDimensions">
+            <file>listCustomDimensions.xml</file>
+            <description>Retrieve a list of customDimensions from GoogleAnalytics account.</description>
+        </component>
+        <component name="createCustomDimension">
+            <file>createCustomDimension.xml</file>
+            <description>Create a new customDimension in GoogleAnalytics account using the provided Parameters.
+            </description>
+        </component>
+        <component name="getCustomDimension">
+            <file>getCustomDimension.xml</file>
+            <description>Retrieve details of a customDimension identified by the provided customDimension ID.
+            </description>
+        </component>
+        <component name="updateCustomDimension">
+            <file>updateCustomDimension.xml</file>
+            <description>Update details of the customDimension identified by the provided customDimension ID.
+            </description>
+        </component>
+        <component name="patchCustomDimension">
+            <file>patchCustomDimension.xml</file>
+            <description>pdates an existing custom dimension. This method supports patch semantics.</description>
+        </component>
+    </subComponents>
 </component>

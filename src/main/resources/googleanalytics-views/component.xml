@@ -28,8 +28,8 @@
             <description>Retrieve one views from GoogleAnalytics account.</description>
         </component>
         <!--<component name="createViews">-->
-            <!--<file>createViews.xml</file>-->
-            <!--<description>Create one views from GoogleAnalytics account.</description>-->
+        <!--<file>createViews.xml</file>-->
+        <!--<description>Create one views from GoogleAnalytics account.</description>-->
         <!--</component>-->
     </subComponents>
 </component>

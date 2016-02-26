@@ -18,10 +18,10 @@
 -->
 
 <component name="googleanalytics-segments" type="synapse/template">
-   <subComponents>
-      <component name="listSegments">
-         <file>listSegments.xml</file>
-         <description>Retrieve a list of segments from GoogleAnalytics account.</description>
-      </component>
-   </subComponents>
+    <subComponents>
+        <component name="listSegments">
+            <file>listSegments.xml</file>
+            <description>Retrieve a list of segments from GoogleAnalytics account.</description>
+        </component>
+    </subComponents>
 </component>

@@ -18,30 +18,31 @@
 -->
 
 <component name="googleanalytics-filters" type="synapse/template">
-   <subComponents>
-      <component name="listFilters">
-         <file>listFilters.xml</file>
-         <description>Retrieve a list of filters from GoogleAnalytics account.</description>
-      </component>
-      <component name="getFilter">
-           <file>getFilter.xml</file>
-           <description>Retrieve a filters from GoogleAnalytics account.</description>
-      </component>
-      <component name="createFilter">
-         <file>createFilter.xml</file>
-         <description>Create a new filter in GoogleAnalytics account using the provided Parameters.</description>
-      </component>
-      <component name="deleteFilter">
-         <file>deleteFilter.xml</file>
-         <description>Delete the filter identified by the provided filter ID from GoogleAnalytics account.</description>
-      </component>
-      <component name="patchFilter">
-         <file>patchFilter.xml</file>
-         <description>Updates an existing filter. This method supports patch semantics.</description>
-      </component>
-      <component name="updateFilter">
-         <file>updateFilter.xml</file>
-         <description>Update details of the filter identified by the provided filter ID.</description>
-      </component>
-   </subComponents>
+    <subComponents>
+        <component name="listFilters">
+            <file>listFilters.xml</file>
+            <description>Retrieve a list of filters from GoogleAnalytics account.</description>
+        </component>
+        <component name="getFilter">
+            <file>getFilter.xml</file>
+            <description>Retrieve a filters from GoogleAnalytics account.</description>
+        </component>
+        <component name="createFilter">
+            <file>createFilter.xml</file>
+            <description>Create a new filter in GoogleAnalytics account using the provided Parameters.</description>
+        </component>
+        <component name="deleteFilter">
+            <file>deleteFilter.xml</file>
+            <description>Delete the filter identified by the provided filter ID from GoogleAnalytics account.
+            </description>
+        </component>
+        <component name="patchFilter">
+            <file>patchFilter.xml</file>
+            <description>Updates an existing filter. This method supports patch semantics.</description>
+        </component>
+        <component name="updateFilter">
+            <file>updateFilter.xml</file>
+            <description>Update details of the filter identified by the provided filter ID.</description>
+        </component>
+    </subComponents>
 </component>

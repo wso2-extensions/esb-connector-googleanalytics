@@ -18,10 +18,10 @@
 -->
 
 <component name="googleanalytics-metaData" type="synapse/template">
-   <subComponents>
-      <component name="listConfigurationData">
-         <file>listConfigurationData.xml</file>
-         <description>Retrieve a list of configurationData from GoogleAnalytics account.</description>
-      </component>
-   </subComponents>
+    <subComponents>
+        <component name="listConfigurationData">
+            <file>listConfigurationData.xml</file>
+            <description>Retrieve a list of configurationData from GoogleAnalytics account.</description>
+        </component>
+    </subComponents>
 </component>

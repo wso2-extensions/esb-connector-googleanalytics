@@ -32,19 +32,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegrationTestBase {
-    
+
     private Map<String, String> esbRequestHeadersMap;
-    
+
     private Map<String, String> apiRequestHeadersMap;
-    
+
     private String apiEndpointUrl;
-    
+
     /**
      * Set up the environment.
      */
     @BeforeClass(alwaysRun = true)
     public void setEnvironment() throws Exception {
-    
+
         init("googleanalytics-connector-1.0.0");
         esbRequestHeadersMap = new HashMap<String, String>();
         apiRequestHeadersMap = new HashMap<String, String>();
@@ -52,8 +52,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
         esbRequestHeadersMap.put("Content-Type", "application/json");
         esbRequestHeadersMap.put("Accept", "application/json");
 
-        String apiEndpoint = "https://www.googleapis.com/oauth2/v3/token?grant_type=refresh_token&client_id="+connectorProperties.getProperty("clientId")+
-                "&client_secret="+connectorProperties.getProperty("clientSecret")+"&refresh_token="+connectorProperties.getProperty("refreshToken");
+        String apiEndpoint = "https://www.googleapis.com/oauth2/v3/token?grant_type=refresh_token&client_id=" + connectorProperties.getProperty("clientId") +
+                "&client_secret=" + connectorProperties.getProperty("clientSecret") + "&refresh_token=" + connectorProperties.getProperty("refreshToken");
 
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "POST", apiRequestHeadersMap);
 
@@ -74,8 +74,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws java.io.IOException
      */
 
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getReportData} integration test with mandatory parameters.", dependsOnMethods = {
-              "testListAccountSummariesWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getReportData} integration test with mandatory parameters.", dependsOnMethods = {
+            "testListAccountSummariesWithMandatoryParameters"})
     public void testGetReportDataWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:getReportData");
@@ -108,8 +108,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getReportData} integration test with optional parameters.", dependsOnMethods = {
-              "testListAccountSummariesWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getReportData} integration test with optional parameters.", dependsOnMethods = {
+            "testListAccountSummariesWithMandatoryParameters"})
     public void testGetReportDataWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:getReportData");
@@ -144,8 +144,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getReportData} integration test with negative case.", dependsOnMethods = {
-            "testGetReportDataWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getReportData} integration test with negative case.", dependsOnMethods = {
+            "testGetReportDataWithMandatoryParameters"})
     public void testGetReportDataWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:getReportData");
@@ -175,7 +175,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listAccountSummaries} integration test with mandatory parameters.")
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listAccountSummaries} integration test with mandatory parameters.")
     public void testListAccountSummariesWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listAccountSummaries");
@@ -202,7 +202,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listAccountSummaries} integration test with optional parameters.")
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listAccountSummaries} integration test with optional parameters.")
     public void testListAccountSummariesWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listAccountSummaries");
@@ -233,7 +233,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listAccountSummaries} integration test with negative case.")
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listAccountSummaries} integration test with negative case.")
     public void testListAccountSummariesWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listAccountSummaries");
@@ -259,7 +259,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listAccounts} integration test with mandatory parameters.")
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listAccounts} integration test with mandatory parameters.")
     public void testListAccountsWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listAccounts");
@@ -286,7 +286,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listAccounts} integration test with optional parameters.")
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listAccounts} integration test with optional parameters.")
     public void testListAccountsWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listAccounts");
@@ -315,7 +315,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listAccounts} integration test with negative case.")
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listAccounts} integration test with negative case.")
     public void testListAccountsWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listAccounts");
@@ -341,7 +341,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {createFilter} integration test with mandatory parameters.")
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {createFilter} integration test with mandatory parameters.")
     public void testCreateFilterWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:createFilter");
@@ -373,8 +373,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {createFilter} integration test with optional parameters.", dependsOnMethods = {
-              "testListAccountSummariesWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {createFilter} integration test with optional parameters.", dependsOnMethods = {
+            "testListAccountSummariesWithMandatoryParameters"})
     public void testCreateFilterWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:createFilter");
@@ -411,8 +411,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {createFilter} integration test with negative case.", dependsOnMethods = {
-            "testCreateFilterWithMandatoryParameters", "testListAccountSummariesWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {createFilter} integration test with negative case.", dependsOnMethods = {
+            "testCreateFilterWithMandatoryParameters", "testListAccountSummariesWithMandatoryParameters"})
     public void testCreateFilterWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:createFilter");
@@ -440,8 +440,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {updateFilter} integration test with mandatory parameters.", dependsOnMethods = {
-            "testCreateFilterWithMandatoryParameters"  })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {updateFilter} integration test with mandatory parameters.", dependsOnMethods = {
+            "testCreateFilterWithMandatoryParameters"})
     public void testUpdateFilterWithMandatoryParameters() throws IOException, JSONException {
 
         final String apiEndpoint =
@@ -478,7 +478,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {updateFilter} integration test with negative case.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {updateFilter} integration test with negative case.", dependsOnMethods = {
             "testCreateFilterWithMandatoryParameters", "testUpdateFilterWithMandatoryParameters"})
     public void testUpdatefilterWithNegativeCase() throws IOException, JSONException {
 
@@ -514,7 +514,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {patchFilter} integration test with optional parameters.", dependsOnMethods = {"testCreateFilterWithOptionalParameters"})
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {patchFilter} integration test with optional parameters.", dependsOnMethods = {"testCreateFilterWithOptionalParameters"})
     public void testPatchFilterWithOptinalParameters() throws IOException, JSONException {
 
         final String apiEndpoint =
@@ -535,7 +535,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
         Assert.assertNotEquals(apiResponseBefore.getString("type"), apiResponseAfter.getString("type"));
 
         Assert.assertEquals(connectorProperties.getProperty("filterUpdatedName"), apiResponseAfter.getString("name"));
-        Assert.assertEquals(connectorProperties.getProperty("filterUpdatedType"),  apiResponseAfter.getString("type"));
+        Assert.assertEquals(connectorProperties.getProperty("filterUpdatedType"), apiResponseAfter.getString("type"));
 
     }
 
@@ -545,9 +545,9 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {patchFilter} integration test with negative case.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {patchFilter} integration test with negative case.", dependsOnMethods = {
             "testCreateFilterWithMandatoryParameters", "testPatchFilterWithOptinalParameters"
-              })
+    })
     public void testPatchfilterWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:patchFilter");
@@ -576,9 +576,9 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listFilters} integration test with mandatory parameters.", dependsOnMethods = {
-            "testCreateFilterWithMandatoryParameters","testCreateFilterWithOptionalParameters"
-              })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listFilters} integration test with mandatory parameters.", dependsOnMethods = {
+            "testCreateFilterWithMandatoryParameters", "testCreateFilterWithOptionalParameters"
+    })
     public void testListFiltersWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listFilters");
@@ -597,8 +597,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
         Assert.assertEquals(esbResponse.getString("username"), apiResponse.getString("username"));
         Assert.assertEquals(esbResponse.getString("totalResults"), apiResponse.getString("totalResults"));
         Assert.assertEquals(esbResponse.getString("itemsPerPage"), apiResponse.getString("itemsPerPage"));
-        String filterId=esbResponse.getJSONArray("items").getJSONObject(1).getString("id");
-        connectorProperties.setProperty("filterId",filterId);
+        String filterId = esbResponse.getJSONArray("items").getJSONObject(1).getString("id");
+        connectorProperties.setProperty("filterId", filterId);
     }
 
     /**
@@ -607,8 +607,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listFilters} integration test with optional parameters.", dependsOnMethods = {
-            "testCreateFilterWithOptionalParameters"  })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listFilters} integration test with optional parameters.", dependsOnMethods = {
+            "testCreateFilterWithOptionalParameters"})
     public void testListFiltersWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listFilters");
@@ -641,9 +641,9 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listFilters} integration test with negative case.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listFilters} integration test with negative case.", dependsOnMethods = {
             "testListFiltersWithOptionalParameters", "testListFiltersWithOptionalParameters"
-              })
+    })
     public void testListFiltersWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listFilters");
@@ -672,9 +672,9 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "formstack {deleteFilter} integration test with mandatory parameters.", dependsOnMethods = {
-            "testCreateFilterWithMandatoryParameters", "testPatchfilterWithNegativeCase","testUpdateFilterWithMandatoryParameters"
-              })
+    @Test(groups = {"wso2.esb"}, description = "formstack {deleteFilter} integration test with mandatory parameters.", dependsOnMethods = {
+            "testCreateFilterWithMandatoryParameters", "testPatchfilterWithNegativeCase", "testUpdateFilterWithMandatoryParameters"
+    })
     public void testDeleteFilterWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:deleteFilter");
@@ -704,9 +704,9 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {deleteFilter} integration test with negative case.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {deleteFilter} integration test with negative case.", dependsOnMethods = {
             "testCreateFilterWithMandatoryParameters", "testPatchfilterWithNegativeCase"
-              })
+    })
     public void testDeleteFilterWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:deleteFilter");
@@ -735,8 +735,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {createAccountUserLink} integration test with mandatory parameters.", dependsOnMethods = {
-            "testListAccountSummariesWithMandatoryParameters"   })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {createAccountUserLink} integration test with mandatory parameters.", dependsOnMethods = {
+            "testListAccountSummariesWithMandatoryParameters"})
     public void testCreateAccountUserLinkWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:createAccountUserLink");
@@ -786,8 +786,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {createAccountUserLink} integration test with negative case.", dependsOnMethods = {
-            "testListAccountSummariesWithMandatoryParameters"  })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {createAccountUserLink} integration test with negative case.", dependsOnMethods = {
+            "testListAccountSummariesWithMandatoryParameters"})
     public void testCreateAccountUserLinkWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:createAccountUserLink");
@@ -817,9 +817,9 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listAccountUserLinks} integration test with mandatory parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listAccountUserLinks} integration test with mandatory parameters.", dependsOnMethods = {
             "testCreateAccountUserLinkWithMandatoryParameters", "testListAccountSummariesWithMandatoryParameters"
-              })
+    })
     public void testListAccountUserLinksWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listAccountUserLinks");
@@ -847,9 +847,9 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listAccountUserLinks} integration test with optional parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listAccountUserLinks} integration test with optional parameters.", dependsOnMethods = {
             "testCreateFilterWithMandatoryParameters", "testCreateFilterWithOptionalParameters",
-            "testListAccountSummariesWithMandatoryParameters" })
+            "testListAccountSummariesWithMandatoryParameters"})
     public void testListAccountUserLinksWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listAccountUserLinks");
@@ -882,8 +882,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listAccountUserLinks} integration test with negative case.", dependsOnMethods = {
-            "testListAccountSummariesWithMandatoryParameters"   })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listAccountUserLinks} integration test with negative case.", dependsOnMethods = {
+            "testListAccountSummariesWithMandatoryParameters"})
     public void testListAccountUserLinksWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listAccountUserLinks");
@@ -912,7 +912,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {updateAccountUserLink} integration test with mandatory parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {updateAccountUserLink} integration test with mandatory parameters.", dependsOnMethods = {
             "testCreateAccountUserLinkWithMandatoryParameters", "testListAccountSummariesWithMandatoryParameters"})
     public void testUpdateAccountUserLinkWithMandatoryParameters() throws IOException, JSONException {
 
@@ -969,9 +969,9 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {updateAccountUserLink} integration test with negative case.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {updateAccountUserLink} integration test with negative case.", dependsOnMethods = {
             "testCreateAccountUserLinkWithMandatoryParameters", "testListAccountSummariesWithMandatoryParameters"
-              })
+    })
     public void testUpdateAccountUserLinkWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:updateAccountUserLink");
@@ -1000,9 +1000,9 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "formstack {deleteAccountUserLink} integration test with mandatory parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "formstack {deleteAccountUserLink} integration test with mandatory parameters.", dependsOnMethods = {
             "testUpdateAccountUserLinkWithMandatoryParameters", "testListAccountSummariesWithMandatoryParameters"
-              })
+    })
     public void testDeleteAccountUserLinkWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:deleteAccountUserLink");
@@ -1030,8 +1030,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {deleteAccountUserLink} integration test with negative case.", dependsOnMethods = {
-            "testListAccountSummariesWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {deleteAccountUserLink} integration test with negative case.", dependsOnMethods = {
+            "testListAccountSummariesWithMandatoryParameters"})
     public void testDeleteAccountUserLinkWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:deleteAccountUserLink");
@@ -1061,7 +1061,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listSegments} integration test with mandatory parameters.")
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listSegments} integration test with mandatory parameters.")
     public void testListSegmentsWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listSegments");
@@ -1088,7 +1088,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listSegments} integration test with optional parameters.")
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listSegments} integration test with optional parameters.")
     public void testListSegmentsWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listSegments");
@@ -1117,7 +1117,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listSegments} integration test with negative case.")
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listSegments} integration test with negative case.")
     public void testListSegmentsWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listSegments");
@@ -1143,7 +1143,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listCustomDataSources} integration test with mandatory parameters.")
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listCustomDataSources} integration test with mandatory parameters.")
     public void testListCustomDataSourcesWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listCustomDataSources");
@@ -1163,8 +1163,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
         Assert.assertEquals(esbResponse.getString("username"), apiResponse.getString("username"));
         Assert.assertEquals(esbResponse.getString("totalResults"), apiResponse.getString("totalResults"));
         Assert.assertEquals(esbResponse.getString("itemsPerPage"), apiResponse.getString("itemsPerPage"));
-        String customDataSourceId=esbResponse.getJSONArray("items").getJSONObject(0).getString("id");
-        connectorProperties.setProperty("customDataSourceId",customDataSourceId);
+        String customDataSourceId = esbResponse.getJSONArray("items").getJSONObject(0).getString("id");
+        connectorProperties.setProperty("customDataSourceId", customDataSourceId);
     }
 
     /**
@@ -1173,7 +1173,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listCustomDataSources} integration test with optional parameters.")
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listCustomDataSources} integration test with optional parameters.")
     public void testListCustomDataSourcesWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listCustomDataSources");
@@ -1207,7 +1207,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listCustomDataSources} integration test with negative case.")
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listCustomDataSources} integration test with negative case.")
     public void testListCustomDataSourcesWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listCustomDataSources");
@@ -1236,7 +1236,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {createAdWordsLink} integration test with mandatory parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {createAdWordsLink} integration test with mandatory parameters.")
     public void testCreateAdWordsLinkWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:createAdWordsLink");
@@ -1275,8 +1275,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {createAdWordsLink} integration test with negative case.", dependsOnMethods = {
-            "testCreateAdWordsLinkWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {createAdWordsLink} integration test with negative case.", dependsOnMethods = {
+            "testCreateAdWordsLinkWithMandatoryParameters"})
     public void testCreateAdWordsLinkWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:createAdWordsLink");
@@ -1305,7 +1305,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getAdWordsLink} integration test with mandatory parameters.", dependsOnMethods = {"testCreateAdWordsLinkWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getAdWordsLink} integration test with mandatory parameters.", dependsOnMethods = {"testCreateAdWordsLinkWithMandatoryParameters"})
     public void testGetAdWordsLinkWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:getAdWordsLink");
@@ -1333,7 +1333,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getAdWordsLink} integration test with optional parameters.", dependsOnMethods = {"testCreateAdWordsLinkWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getAdWordsLink} integration test with optional parameters.", dependsOnMethods = {"testCreateAdWordsLinkWithMandatoryParameters"})
     public void testGetAdWordsLinkWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:getAdWordsLink");
@@ -1373,7 +1373,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getAdWordsLink} integration test with negative case.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getAdWordsLink} integration test with negative case.", dependsOnMethods = {
             "testGetAdWordsLinkWithMandatoryParameters"})
     public void testGetAdWordsLinkWithNegativeCase() throws IOException, JSONException {
 
@@ -1403,7 +1403,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listAdWordsLinks} integration test with mandatory parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listAdWordsLinks} integration test with mandatory parameters.", dependsOnMethods = {
             "testGetAdWordsLinkWithMandatoryParameters"})
     public void testListAdWordsLinksWithMandatoryParameters() throws IOException, JSONException {
 
@@ -1434,7 +1434,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listAdWordsLinks} integration test with optional parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listAdWordsLinks} integration test with optional parameters.", dependsOnMethods = {
             "testGetAdWordsLinkWithMandatoryParameters"})
     public void testListAdWordsLinksWithOptionalParameters() throws IOException, JSONException {
 
@@ -1468,7 +1468,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listAdWordsLinks} integration test with negative case."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listAdWordsLinks} integration test with negative case.")
     public void testListAdWordsLinksWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listAdWordsLinks");
@@ -1497,7 +1497,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {updateAdWordsLink} integration test with mandatory parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {updateAdWordsLink} integration test with mandatory parameters.", dependsOnMethods = {
             "testCreateAdWordsLinkWithMandatoryParameters"})
     public void testUpdateAdWordsLinkWithMandatoryParameters() throws IOException, JSONException {
 
@@ -1533,7 +1533,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {updateAdWordsLink} integration test with negative case.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {updateAdWordsLink} integration test with negative case.", dependsOnMethods = {
             "testCreateAdWordsLinkWithMandatoryParameters"})
     public void testUpdateAdWordsLinkWithNegativeCase() throws IOException, JSONException {
 
@@ -1569,7 +1569,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {patchAdWordsLink} integration test with optional parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {patchAdWordsLink} integration test with optional parameters.", dependsOnMethods = {
             "testCreateAdWordsLinkWithMandatoryParameters"})
     public void testPatchAdWordsLinkWithOptinalParameters() throws IOException, JSONException {
 
@@ -1599,7 +1599,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {patchAdWordsLink} integration test with negative case.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {patchAdWordsLink} integration test with negative case.", dependsOnMethods = {
             "testCreateAdWordsLinkWithMandatoryParameters"})
     public void testPatchAdWordsLinkWithNegativeCase() throws IOException, JSONException {
 
@@ -1630,8 +1630,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {createCustomDimension} integration test with mandatory parameters.", dependsOnMethods = {
-            "testListAccountSummariesWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {createCustomDimension} integration test with mandatory parameters.", dependsOnMethods = {
+            "testListAccountSummariesWithMandatoryParameters"})
     public void testCreateCustomDimensionWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:createCustomDimension");
@@ -1665,8 +1665,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {createCustomDimension} integration test with optional parameters.", dependsOnMethods = {
-            "testListAccountSummariesWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {createCustomDimension} integration test with optional parameters.", dependsOnMethods = {
+            "testListAccountSummariesWithMandatoryParameters"})
     public void testCreateCustomDimensionWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:createCustomDimension");
@@ -1707,7 +1707,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {createCustomDimension} integration test with negative case.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {createCustomDimension} integration test with negative case.", dependsOnMethods = {
             "testCreateCustomDimensionWithMandatoryParameters", "testListAccountSummariesWithMandatoryParameters"})
     public void testCreateDimensionWithNegativeCase() throws IOException, JSONException {
 
@@ -1738,7 +1738,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getCustomDimension} integration test with mandatory parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getCustomDimension} integration test with mandatory parameters.", dependsOnMethods = {
             "testCreateCustomDimensionWithMandatoryParameters", "testListAccountSummariesWithMandatoryParameters"})
     public void testGetCustomDimensionWithMandatoryParameters() throws IOException, JSONException {
 
@@ -1769,7 +1769,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getCustomDimension} integration test with optional parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getCustomDimension} integration test with optional parameters.", dependsOnMethods = {
             "testCreateCustomDimensionWithMandatoryParameters", "testListAccountSummariesWithMandatoryParameters"})
     public void testGetCustomDimensionWithOptionalParameters() throws IOException, JSONException {
 
@@ -1809,7 +1809,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getCustomDimension} integration test with negative case.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getCustomDimension} integration test with negative case.", dependsOnMethods = {
             "testListAccountSummariesWithMandatoryParameters"})
     public void testGetCustomDimensionWithNegativeCase() throws IOException, JSONException {
 
@@ -1839,7 +1839,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listCustomDimensions} integration test with mandatory parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listCustomDimensions} integration test with mandatory parameters.", dependsOnMethods = {
             "testCreateCustomDimensionWithMandatoryParameters", "testListAccountSummariesWithMandatoryParameters"})
     public void testListCustomDimensionsWithMandatoryParameters() throws IOException, JSONException {
 
@@ -1868,9 +1868,9 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listCustomDimensions} integration test with optional parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listCustomDimensions} integration test with optional parameters.", dependsOnMethods = {
             "testCreateCustomDimensionWithMandatoryParameters", "testCreateCustomDimensionWithOptionalParameters",
-            "testListAccountSummariesWithMandatoryParameters" })
+            "testListAccountSummariesWithMandatoryParameters"})
     public void testListCustomDimensionsWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listCustomDimensions");
@@ -1903,8 +1903,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listCustomDimensions} integration test with negative case.", dependsOnMethods = {
-            "testListAccountSummariesWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listCustomDimensions} integration test with negative case.", dependsOnMethods = {
+            "testListAccountSummariesWithMandatoryParameters"})
     public void testListCustomDimensionsWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listCustomDimensions");
@@ -1935,7 +1935,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {updateCustomDimension} integration test with mandatory parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {updateCustomDimension} integration test with mandatory parameters.", dependsOnMethods = {
             "testCreateCustomDimensionWithMandatoryParameters", "testListAccountSummariesWithMandatoryParameters"})
     public void testUpdateCustomDimensionWithMandatoryParameters() throws IOException, JSONException {
 
@@ -1977,7 +1977,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {updateCustomDimension} integration test with negative case.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {updateCustomDimension} integration test with negative case.", dependsOnMethods = {
             "testUpdateCustomDimensionWithMandatoryParameters", "testListAccountSummariesWithMandatoryParameters"})
     public void testUpdateCustomDimensionWithNegativeCase() throws IOException, JSONException {
 
@@ -2015,7 +2015,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {patchCustomDimension} integration test with optional parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {patchCustomDimension} integration test with optional parameters.", dependsOnMethods = {
             "testCreateCustomDimensionWithOptionalParameters", "testListAccountSummariesWithMandatoryParameters"})
     public void testPatchCustomDimensionWithOptinalParameters() throws IOException, JSONException {
 
@@ -2050,7 +2050,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {patchCustomDimension} integration test with negative case.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {patchCustomDimension} integration test with negative case.", dependsOnMethods = {
             "testCreateCustomDimensionWithOptionalParameters", "testListAccountSummariesWithMandatoryParameters"})
     public void testPatchCustomDimensionWithNegativeCase() throws IOException, JSONException {
 
@@ -2083,8 +2083,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {createCustomMetrics} integration test with mandatory parameters.", dependsOnMethods = {
-            "testListAccountSummariesWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {createCustomMetrics} integration test with mandatory parameters.", dependsOnMethods = {
+            "testListAccountSummariesWithMandatoryParameters"})
     public void testCreateCustomMetricsWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:createCustomMetrics");
@@ -2119,8 +2119,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {createCustomMetrics} integration test with optional parameters.", dependsOnMethods = {
-            "testListAccountSummariesWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {createCustomMetrics} integration test with optional parameters.", dependsOnMethods = {
+            "testListAccountSummariesWithMandatoryParameters"})
     public void testCreateCustomMetricsWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:createCustomMetrics");
@@ -2159,7 +2159,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {createCustomMetrics} integration test with negative case.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {createCustomMetrics} integration test with negative case.", dependsOnMethods = {
             "testCreateCustomDimensionWithMandatoryParameters", "testListAccountSummariesWithMandatoryParameters"})
     public void testCreateCustomMetricsWithNegativeCase() throws IOException, JSONException {
 
@@ -2189,7 +2189,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getCustomMetrics} integration test with mandatory parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getCustomMetrics} integration test with mandatory parameters.", dependsOnMethods = {
             "testCreateCustomMetricsWithMandatoryParameters", "testListAccountSummariesWithMandatoryParameters"})
     public void testGetCustomMetricsWithMandatoryParameters() throws IOException, JSONException {
 
@@ -2220,7 +2220,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getCustomMetrics} integration test with optional parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getCustomMetrics} integration test with optional parameters.", dependsOnMethods = {
             "testCreateCustomMetricsWithMandatoryParameters", "testListAccountSummariesWithMandatoryParameters"})
     public void testGetCustomMetricsWithOptionalParameters() throws IOException, JSONException {
 
@@ -2260,8 +2260,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getCustomMetrics} integration test with negative case.", dependsOnMethods = {
-            "testListAccountSummariesWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getCustomMetrics} integration test with negative case.", dependsOnMethods = {
+            "testListAccountSummariesWithMandatoryParameters"})
     public void testGetCustomMetricsWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:getCustomMetrics");
@@ -2290,7 +2290,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listCustomMetrics} integration test with mandatory parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listCustomMetrics} integration test with mandatory parameters.", dependsOnMethods = {
             "testCreateCustomMetricsWithMandatoryParameters", "testListAccountSummariesWithMandatoryParameters"})
     public void testListCustomMetricsWithMandatoryParameters() throws IOException, JSONException {
 
@@ -2319,9 +2319,9 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listCustomMetrics} integration test with optional parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listCustomMetrics} integration test with optional parameters.", dependsOnMethods = {
             "testCreateCustomMetricsWithOptionalParameters", "testCreateCustomMetricsWithMandatoryParameters",
-            "testListAccountSummariesWithMandatoryParameters" })
+            "testListAccountSummariesWithMandatoryParameters"})
     public void testListCustomMetricsWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listCustomMetrics");
@@ -2354,7 +2354,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listCustomMetrics} integration test with negative case.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listCustomMetrics} integration test with negative case.", dependsOnMethods = {
             "testListAccountSummariesWithMandatoryParameters"})
     public void testListCustomMetricsWithNegativeCase() throws IOException, JSONException {
 
@@ -2386,7 +2386,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {updateCustomMetrics} integration test with mandatory parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {updateCustomMetrics} integration test with mandatory parameters.", dependsOnMethods = {
             "testCreateCustomMetricsWithMandatoryParameters", "testListAccountSummariesWithMandatoryParameters"})
     public void testUpdateCustomMetricsWithMandatoryParameters() throws IOException, JSONException {
 
@@ -2427,7 +2427,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {updateCustomMetrics} integration test with negative case.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {updateCustomMetrics} integration test with negative case.", dependsOnMethods = {
             "testUpdateCustomMetricsWithMandatoryParameters", "testListAccountSummariesWithMandatoryParameters"})
     public void testUpdateCustomMetricsWithNegativeCase() throws IOException, JSONException {
 
@@ -2465,7 +2465,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {patchCustomMetrics} integration test with optional parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {patchCustomMetrics} integration test with optional parameters.", dependsOnMethods = {
             "testCreateCustomMetricsWithOptionalParameters", "testListAccountSummariesWithMandatoryParameters"})
     public void testPatchCustomMetricsWithOptinalParameters() throws IOException, JSONException {
 
@@ -2500,7 +2500,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {patchCustomMetrics} integration test with negative case.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {patchCustomMetrics} integration test with negative case.", dependsOnMethods = {
             "testUpdateCustomMetricsWithMandatoryParameters", "testListAccountSummariesWithMandatoryParameters"})
     public void testPatchCustomMetricsWithNegativeCase() throws IOException, JSONException {
 
@@ -2533,7 +2533,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {createExperiment} integration test with mandatory parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {createExperiment} integration test with mandatory parameters.")
     public void testCreateExperimentWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:createExperiment");
@@ -2568,7 +2568,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {createExperiment} integration test with optional parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {createExperiment} integration test with optional parameters.")
     public void testCreateExperimentWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:createExperiment");
@@ -2602,7 +2602,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {createExperiment} integration test with negative case.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {createExperiment} integration test with negative case.", dependsOnMethods = {
             "testCreateExperimentWithMandatoryParameters"})
     public void testCreateExperimentWithNegativeCase() throws IOException, JSONException {
 
@@ -2633,8 +2633,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getExperiment} integration test with mandatory parameters.", dependsOnMethods = {
-            "testCreateExperimentWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getExperiment} integration test with mandatory parameters.", dependsOnMethods = {
+            "testCreateExperimentWithMandatoryParameters"})
     public void testGetExperimentWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:getExperiment");
@@ -2664,7 +2664,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getExperiment} integration test with optional parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getExperiment} integration test with optional parameters.", dependsOnMethods = {
             "testCreateExperimentWithMandatoryParameters"})
     public void testGetExperimentWithOptionalParameters() throws IOException, JSONException {
 
@@ -2707,8 +2707,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getExperiment} integration test with negative case.", dependsOnMethods = {
-            "testGetExperimentWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getExperiment} integration test with negative case.", dependsOnMethods = {
+            "testGetExperimentWithMandatoryParameters"})
     public void testGetExperimentWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:getExperiment");
@@ -2737,7 +2737,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listExperiments} integration test with mandatory parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listExperiments} integration test with mandatory parameters.", dependsOnMethods = {
             "testCreateExperimentWithMandatoryParameters"})
     public void testListExperimentsWithMandatoryParameters() throws IOException, JSONException {
 
@@ -2768,8 +2768,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listExperiments} integration test with optional parameters.", dependsOnMethods = {
-            "testCreateExperimentWithMandatoryParameters","testCreateExperimentWithOptionalParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listExperiments} integration test with optional parameters.", dependsOnMethods = {
+            "testCreateExperimentWithMandatoryParameters", "testCreateExperimentWithOptionalParameters"})
     public void testListExperimentsWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listExperiments");
@@ -2804,8 +2804,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listExperiments} integration test with negative case.", dependsOnMethods = {
-            "testCreateExperimentWithMandatoryParameters", "testCreateExperimentWithOptionalParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listExperiments} integration test with negative case.", dependsOnMethods = {
+            "testCreateExperimentWithMandatoryParameters", "testCreateExperimentWithOptionalParameters"})
     public void testListExperimentsWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listExperiments");
@@ -2834,8 +2834,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {updateExperiment} integration test with mandatory parameters.", dependsOnMethods = {
-            "testCreateExperimentWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {updateExperiment} integration test with mandatory parameters.", dependsOnMethods = {
+            "testCreateExperimentWithMandatoryParameters"})
     public void testUpdateExperimentWithMandatoryParameters() throws IOException, JSONException {
 
         final String apiEndpoint =
@@ -2871,7 +2871,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {updateExperiment} integration test with optional parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {updateExperiment} integration test with optional parameters.", dependsOnMethods = {
             "testCreateExperimentWithMandatoryParameters"})
     public void testUpdateExperimentWithOptionalParameters() throws IOException, JSONException {
 
@@ -2906,8 +2906,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {updateExperiment} integration test with negative case.", dependsOnMethods = {
-            "testCreateExperimentWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {updateExperiment} integration test with negative case.", dependsOnMethods = {
+            "testCreateExperimentWithMandatoryParameters"})
     public void testUpdateExperimentWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:updateExperiment");
@@ -2943,7 +2943,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {patchExperiment} integration test with optional parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {patchExperiment} integration test with optional parameters.", dependsOnMethods = {
             "testCreateExperimentWithOptionalParameters"})
     public void testPatchExperimentWithOptionalParameters() throws IOException, JSONException {
 
@@ -2979,8 +2979,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {patchExperiment} integration test with negative case.", dependsOnMethods = {
-            "testCreateExperimentWithOptionalParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {patchExperiment} integration test with negative case.", dependsOnMethods = {
+            "testCreateExperimentWithOptionalParameters"})
     public void testPatchExperimentWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:patchExperiment");
@@ -3011,7 +3011,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listMultiChannelFunnelsReportData} integration test with mandatory parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listMultiChannelFunnelsReportData} integration test with mandatory parameters.", dependsOnMethods = {
             "testListAccountSummariesWithMandatoryParameters"})
     public void testListMultiChannelFunnelReportDataWithMandatoryParameters() throws IOException, JSONException {
 
@@ -3046,7 +3046,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listMultiChannelFunnelsReportData} integration test with optional parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listMultiChannelFunnelsReportData} integration test with optional parameters.", dependsOnMethods = {
             "testListAccountSummariesWithMandatoryParameters"})
     public void testListMultiChannelFunnelReportDataWithOptionalParameters() throws IOException, JSONException {
 
@@ -3063,7 +3063,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                         + connectorProperties.getProperty("multiChannelEndDate") + "&metrics="
                         + connectorProperties.getProperty("multiChannelMetrics") + "&max-results="
                         + connectorProperties.getProperty("coreReportMaxResults") + "&start-index="
-                        + connectorProperties.getProperty("coreReportStartIndex");;
+                        + connectorProperties.getProperty("coreReportStartIndex");
+        ;
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3083,7 +3084,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listMultiChannelFunnelsReportData} integration test with negative case.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listMultiChannelFunnelsReportData} integration test with negative case.", dependsOnMethods = {
             "testListAccountSummariesWithMandatoryParameters"})
     public void testListMultiChannelFunnelsReportDataWithNegativeCase() throws IOException, JSONException {
 
@@ -3114,7 +3115,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listConfigurationData} integration test with mandatory parameters.", dependsOnMethods = {
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listConfigurationData} integration test with mandatory parameters.", dependsOnMethods = {
             "testListAccountSummariesWithMandatoryParameters"})
     public void testListConfigurationDataWithMandatoryParameters() throws IOException, JSONException {
 
@@ -3142,8 +3143,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listConfigurationData} integration test with optional parameters.", dependsOnMethods = {
-            "testListAccountSummariesWithMandatoryParameters"  })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listConfigurationData} integration test with optional parameters.", dependsOnMethods = {
+            "testListAccountSummariesWithMandatoryParameters"})
     public void testListConfigurationDataWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listConfigurationData");
@@ -3177,8 +3178,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listConfigurationData} integration test with negative case.", dependsOnMethods = {
-            "testListAccountSummariesWithMandatoryParameters"   })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listConfigurationData} integration test with negative case.", dependsOnMethods = {
+            "testListAccountSummariesWithMandatoryParameters"})
     public void testListConfigurationDataWithNegativeCase() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listConfigurationData");
@@ -3198,13 +3199,14 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 .getJSONObject(0).getString("message"));
     }
 //////////////////////////NOW DONE////////////////
+
     /**
      * Positive test case for listViews method with mandatory parameters.
      *
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listViews} integration test with mandatory parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listViews} integration test with mandatory parameters.")
     public void testListViewsWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listViews");
@@ -3212,7 +3214,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_listViews_mandatory.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/" +connectorProperties.getProperty("webPropertyId")+ "/profiles" ;
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/profiles";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3227,7 +3229,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listViews} integration test with optional parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listViews} integration test with optional parameters.")
     public void testListViewsWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listViews");
@@ -3235,7 +3237,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_listViews_optional.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId") + "/webproperties/" +connectorProperties.getProperty("webPropertyId")+"/profiles?max-results=" + connectorProperties.getProperty("maxResults") ;
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/profiles?max-results=" + connectorProperties.getProperty("maxResults");
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3251,7 +3253,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listViews} integration test with negative parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listViews} integration test with negative parameters.")
     public void testListViewsWithNegativeParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listViews");
@@ -3259,7 +3261,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_listViews_negative.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/invalid/profiles" ;
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/invalid/profiles";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), apiRestResponse.getHttpStatusCode());
@@ -3277,7 +3279,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getViews} integration test with mandatory parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getViews} integration test with mandatory parameters.")
     public void testGetViewsWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:getViews");
@@ -3285,7 +3287,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getViews_mandatory.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/" +connectorProperties.getProperty("webPropertyId")+ "/profiles/"+ connectorProperties.getProperty("profileId");
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/profiles/" + connectorProperties.getProperty("profileId");
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3300,7 +3302,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getViews} integration test with optional parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getViews} integration test with optional parameters.")
     public void testGetViewsWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:getViews");
@@ -3308,7 +3310,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getViews_optional.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/" +connectorProperties.getProperty("webPropertyId")+ "/profiles/"+connectorProperties.getProperty("profileId")+"?fields=accountId,webPropertyId" ;
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/profiles/" + connectorProperties.getProperty("profileId") + "?fields=accountId,webPropertyId";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3324,7 +3326,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getViews} integration test with negative parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getViews} integration test with negative parameters.")
     public void testGetViewsWithNegativeParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:getViews");
@@ -3332,7 +3334,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getViews_negative.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/" +connectorProperties.getProperty("webPropertyId")+ "/profiles/11111" ;
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/profiles/11111";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3352,7 +3354,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listGoals} integration test with mandatory parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listGoals} integration test with mandatory parameters.")
     public void testListGoalsWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listGoals");
@@ -3360,7 +3362,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_listGoals_mandatory.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/" +connectorProperties.getProperty("webPropertyId")+ "/profiles/"+ connectorProperties.getProperty("profileId")+"/goals";
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/profiles/" + connectorProperties.getProperty("profileId") + "/goals";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3374,7 +3376,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listGoals} integration test with optional parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listGoals} integration test with optional parameters.")
     public void testListGoalsWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listGoals");
@@ -3382,7 +3384,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_listGoals_optional.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/" +connectorProperties.getProperty("webPropertyId")+ "/profiles/"+connectorProperties.getProperty("profileId")+"/goals?fields=kind,itemsPerPage" ;
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/profiles/" + connectorProperties.getProperty("profileId") + "/goals?fields=kind,itemsPerPage";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3397,7 +3399,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listGoals} integration test with negative parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listGoals} integration test with negative parameters.")
     public void testListGoalsWithNegativeParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listGoals");
@@ -3405,7 +3407,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_listGoals_negative.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/invalid/profiles/"+ connectorProperties.getProperty("profileId")+"/goals" ;
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/invalid/profiles/" + connectorProperties.getProperty("profileId") + "/goals";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3425,7 +3427,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getGoals} integration test with mandatory parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getGoals} integration test with mandatory parameters.")
     public void testGetGoalsWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:getGoals");
@@ -3433,7 +3435,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getGoals_mandatory.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/" +connectorProperties.getProperty("webPropertyId")+ "/profiles/"+ connectorProperties.getProperty("profileId")+"/goals/"+connectorProperties.getProperty("goalId");
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/profiles/" + connectorProperties.getProperty("profileId") + "/goals/" + connectorProperties.getProperty("goalId");
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3447,7 +3449,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getGoals} integration test with optional parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getGoals} integration test with optional parameters.")
     public void testGetGoalsWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:getGoals");
@@ -3455,7 +3457,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getGoals_optional.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/" +connectorProperties.getProperty("webPropertyId")+ "/profiles/"+connectorProperties.getProperty("profileId")+"/goals/"+connectorProperties.getProperty("goalId")+"?fields=accountId" ;
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/profiles/" + connectorProperties.getProperty("profileId") + "/goals/" + connectorProperties.getProperty("goalId") + "?fields=accountId";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3470,7 +3472,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getGoals} integration test with negative parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getGoals} integration test with negative parameters.")
     public void testGetGoalsWithNegativeParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:getGoals");
@@ -3478,7 +3480,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getGoals_negative.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/"+connectorProperties.getProperty("webPropertyId")+"/profiles/"+ connectorProperties.getProperty("profileId")+"/goals/invalid";
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/profiles/" + connectorProperties.getProperty("profileId") + "/goals/invalid";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3491,13 +3493,14 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 .getString("message"), apiRestResponse.getBody().getJSONObject("error").getJSONArray("errors")
                 .getJSONObject(0).getString("message"));
     }
+
     /**
      * Positive test case for getWebProperties method with mandatory parameters.
      *
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getWebProperties} integration test with mandatory parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getWebProperties} integration test with mandatory parameters.")
     public void testGetWebPropertiesWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:getWebProperties");
@@ -3505,7 +3508,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getWebProperties_mandatory.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/"+connectorProperties.getProperty("webPropertyId");
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId");
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3519,7 +3522,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getWebProperties} integration test with optional parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getWebProperties} integration test with optional parameters.")
     public void testGetWebPropertiesWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:getWebProperties");
@@ -3527,7 +3530,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getWebProperties_optional.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/"+connectorProperties.getProperty("webPropertyId")+"?fields=kind,name" ;
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "?fields=kind,name";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3543,7 +3546,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getWebProperties} integration test with negative parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getWebProperties} integration test with negative parameters.")
     public void testGetWebPropertiesWithNegativeParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:getWebProperties");
@@ -3551,7 +3554,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_getWebProperties_negative.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/invalid/webproperties/"+connectorProperties.getProperty("webPropertyId");
+                apiEndpointUrl + "/management/accounts/invalid/webproperties/" + connectorProperties.getProperty("webPropertyId");
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3571,7 +3574,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listWebProperties} integration test with mandatory parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listWebProperties} integration test with mandatory parameters.")
     public void testListWebPropertiesWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listWebProperties");
@@ -3579,7 +3582,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_listWebProperties_mandatory.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/";
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3593,7 +3596,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listWebProperties} integration test with optional parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listWebProperties} integration test with optional parameters.")
     public void testListWebPropertiesWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listWebProperties");
@@ -3601,7 +3604,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_listWebProperties_optional.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties?max-results="+ connectorProperties.getProperty("maxResults") ;
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties?max-results=" + connectorProperties.getProperty("maxResults");
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3616,7 +3619,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listWebProperties} integration test with negative parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listWebProperties} integration test with negative parameters.")
     public void testListWebPropertiesWithNegativeParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listWebProperties");
@@ -3637,13 +3640,14 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 .getString("message"), apiRestResponse.getBody().getJSONObject("error").getJSONArray("errors")
                 .getJSONObject(0).getString("message"));
     }
+
     /**
      * Positive test case for listWebPropertyUserLinks method with mandatory parameters.
      *
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listWebPropertyUserLinks} integration test with mandatory parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listWebPropertyUserLinks} integration test with mandatory parameters.")
     public void testListWebPropertiesUserLinksWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listWebPropertyUserLinks");
@@ -3651,7 +3655,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_listWebPropertyUserLinks_mandatory.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/"+connectorProperties.getProperty("webPropertyId")+"/entityUserLinks" ;
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/entityUserLinks";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3665,7 +3669,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listWebPropertyUserLinks} integration test with optional parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listWebPropertyUserLinks} integration test with optional parameters.")
     public void testListWebPropertiesUserLinksWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listWebPropertyUserLinks");
@@ -3673,7 +3677,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_listWebPropertyUserLinks_optional.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/"+connectorProperties.getProperty("webPropertyId")+"/entityUserLinks?max-results=" + connectorProperties.getProperty("maxResults");
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/entityUserLinks?max-results=" + connectorProperties.getProperty("maxResults");
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3688,7 +3692,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listWebPropertyUserLinks} integration test with negative parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listWebPropertyUserLinks} integration test with negative parameters.")
     public void testListWebPropertiesUserLinksWithNegativeParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listWebPropertyUserLinks");
@@ -3696,7 +3700,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_listWebPropertyUserLinks_negative.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/invalid/webproperties/"+connectorProperties.getProperty("webPropertyId")+"/entityUserLinks" ;
+                apiEndpointUrl + "/management/accounts/invalid/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/entityUserLinks";
 
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
@@ -3717,7 +3721,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listUploads} integration test with mandatory parameters.", dependsOnMethods = {"testListCustomDataSourcesWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listUploads} integration test with mandatory parameters.", dependsOnMethods = {"testListCustomDataSourcesWithMandatoryParameters"})
     public void testListUploadsWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listUploads");
@@ -3725,7 +3729,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_listUploads_mandatory.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/"+connectorProperties.getProperty("webPropertyId")+"/customDataSources/"+connectorProperties.getProperty("customDataSourceId")+"/uploads";
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/customDataSources/" + connectorProperties.getProperty("customDataSourceId") + "/uploads";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3739,7 +3743,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listUploads} integration test with optional parameters.", dependsOnMethods = { "testListCustomDataSourcesWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listUploads} integration test with optional parameters.", dependsOnMethods = {"testListCustomDataSourcesWithMandatoryParameters"})
     public void testListUploadsWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listUploads");
@@ -3747,7 +3751,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_listUploads_optional.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/"+connectorProperties.getProperty("webPropertyId")+"/customDataSources/"+connectorProperties.getProperty("customDataSourceId")+"/uploads?max-results=" + connectorProperties.getProperty("maxResults");
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/customDataSources/" + connectorProperties.getProperty("customDataSourceId") + "/uploads?max-results=" + connectorProperties.getProperty("maxResults");
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3761,7 +3765,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listUploads} integration test with negative parameters.", dependsOnMethods = {  "testListCustomDataSourcesWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listUploads} integration test with negative parameters.", dependsOnMethods = {"testListCustomDataSourcesWithMandatoryParameters"})
     public void testListUploadsWithNegativeParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listUploads");
@@ -3769,7 +3773,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_listUploads_negative.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/"+connectorProperties.getProperty("webPropertyId")+"/customDataSources/invalid/uploads";
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/customDataSources/invalid/uploads";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3789,7 +3793,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listProfileUserLink} integration test with mandatory parameters.")
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listProfileUserLink} integration test with mandatory parameters.")
     public void testListProfileUserLinkWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listProfileUserLink");
@@ -3797,20 +3801,21 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_listProfileUserLink_mandatory.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/"+connectorProperties.getProperty("webPropertyId")+"/profiles/"+connectorProperties.getProperty("profileId")+"/entityUserLinks";
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/profiles/" + connectorProperties.getProperty("profileId") + "/entityUserLinks";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), apiRestResponse.getHttpStatusCode());
         Assert.assertEquals(esbResponse.getString("kind"), apiResponse.getString("kind"));
     }
+
     /**
      * Positive test case for listProfileUserLink method with optional parameters.
      *
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listProfileUserLink} integration test with optional parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listProfileUserLink} integration test with optional parameters.")
     public void testListProfileUserLinkWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listProfileUserLink");
@@ -3818,20 +3823,21 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_listProfileUserLink_optional.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/"+connectorProperties.getProperty("webPropertyId")+"/profiles/"+connectorProperties.getProperty("profileId")+"/entityUserLinks?max-results="+ connectorProperties.getProperty("maxResults");
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/profiles/" + connectorProperties.getProperty("profileId") + "/entityUserLinks?max-results=" + connectorProperties.getProperty("maxResults");
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), apiRestResponse.getHttpStatusCode());
         Assert.assertEquals(esbResponse.getString("totalResults"), apiResponse.getString("totalResults"));
     }
+
     /**
      * Negative test case for listProfileUserLink method with negative parameters.
      *
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listProfileUserLink} integration test with negative parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listProfileUserLink} integration test with negative parameters.")
     public void testListProfileUserLinkWithNegativeParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listProfileUserLink");
@@ -3839,7 +3845,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_listProfileUserLink_negative.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/"+connectorProperties.getProperty("webPropertyId")+"/profiles/invalid/entityUserLinks";
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/profiles/invalid/entityUserLinks";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3852,13 +3858,14 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 .getString("message"), apiRestResponse.getBody().getJSONObject("error").getJSONArray("errors")
                 .getJSONObject(0).getString("message"));
     }
+
     /**
      * Positive test case for listProfileFilterLink method with mandatory parameters.
      *
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listProfileFilterLink} integration test with mandatory parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listProfileFilterLink} integration test with mandatory parameters.")
     public void testListProfileFilterLinkWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listProfileFilterLink");
@@ -3866,7 +3873,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_listProfileFilterLink_mandatory.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/"+connectorProperties.getProperty("webPropertyId")+"/profiles/"+connectorProperties.getProperty("profileId")+"/profileFilterLinks";
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/profiles/" + connectorProperties.getProperty("profileId") + "/profileFilterLinks";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3880,7 +3887,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listProfileFilterLink} integration test with optional parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listProfileFilterLink} integration test with optional parameters.")
     public void testListProfileFilterLinkWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listProfileFilterLink");
@@ -3888,7 +3895,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_listProfileFilterLink_optional.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/"+connectorProperties.getProperty("webPropertyId")+"/profiles/"+connectorProperties.getProperty("profileId")+"/profileFilterLinks?max-results="+ connectorProperties.getProperty("maxResults");
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/profiles/" + connectorProperties.getProperty("profileId") + "/profileFilterLinks?max-results=" + connectorProperties.getProperty("maxResults");
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3902,7 +3909,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {listProfileFilterLink} integration test with negative parameters."  )
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {listProfileFilterLink} integration test with negative parameters.")
     public void testListProfileFilterLinkWithNegativeParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:listProfileFilterLink");
@@ -3910,7 +3917,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
                 sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "esb_listProfileFilterLink_negative.json");
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/webproperties/"+connectorProperties.getProperty("webPropertyId")+"/profiles/invalid/profileFilterLinks?max-results="+ connectorProperties.getProperty("maxResults");
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/webproperties/" + connectorProperties.getProperty("webPropertyId") + "/profiles/invalid/profileFilterLinks?max-results=" + connectorProperties.getProperty("maxResults");
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3930,7 +3937,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getFilter} integration test with mandatory parameters.", dependsOnMethods = { "testListFiltersWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getFilter} integration test with mandatory parameters.", dependsOnMethods = {"testListFiltersWithMandatoryParameters"})
     public void testGetFilterWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:getFilter");
@@ -3939,7 +3946,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
 
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/filters/"+connectorProperties.getProperty("filterId");
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/filters/" + connectorProperties.getProperty("filterId");
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
@@ -3953,7 +3960,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getFilter} integration test with optional parameters.", dependsOnMethods = {  "testListFiltersWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getFilter} integration test with optional parameters.", dependsOnMethods = {"testListFiltersWithMandatoryParameters"})
     public void testGetFilterWithOptionalParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:getFilter");
@@ -3962,20 +3969,21 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
 
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/filters/"+connectorProperties.getProperty("filterId")+"?fields=accountId";
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/filters/" + connectorProperties.getProperty("filterId") + "?fields=accountId";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
 
         final JSONObject apiResponse = apiRestResponse.getBody();
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), apiRestResponse.getHttpStatusCode());
         Assert.assertEquals(esbResponse.getString("accountId"), apiResponse.getString("accountId"));
     }
+
     /**
      * Negative test case for getFilter method with negative parameters.
      *
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {getFilter} integration test with negative parameters.", dependsOnMethods = {  "testListFiltersWithMandatoryParameters" })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {getFilter} integration test with negative parameters.", dependsOnMethods = {"testListFiltersWithMandatoryParameters"})
     public void testGetFilterWithNegativeParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:getFilter");
@@ -3984,7 +3992,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
         final JSONObject esbResponse = esbRestResponse.getBody();
         final String apiEndpoint =
 
-                apiEndpointUrl + "/management/accounts/"+ connectorProperties.getProperty("accountId")+ "/filters/invalid";
+                apiEndpointUrl + "/management/accounts/" + connectorProperties.getProperty("accountId") + "/filters/invalid";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndpoint, "GET", apiRequestHeadersMap);
         final JSONObject apiResponse = apiRestResponse.getBody();
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), apiRestResponse.getHttpStatusCode());
@@ -4003,7 +4011,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {insertGoals} integration test with mandatory parameters.")
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {insertGoals} integration test with mandatory parameters.")
     public void testCreateGoalsWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:insertGoals");
@@ -4012,7 +4020,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
         final JSONObject esbResponse = esbRestResponse.getBody();
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
         Assert.assertEquals(esbResponse.getString("kind"), "analytics#goals");
-   }
+    }
 
     /**
      * Positive test case for insertWebProperties method with mandatory parameters.
@@ -4020,7 +4028,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {insertWebProperties} integration test with mandatory parameters.")
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {insertWebProperties} integration test with mandatory parameters.")
     public void testCreateWebPropertiesWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:insertWebProperties");
@@ -4030,13 +4038,14 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
         Assert.assertEquals(esbResponse.getString("kind"), "analytics#webproperties");
     }
+
     /**
-          * Positive test case for createWebPropertyUserLinks method with mandatory parameters.
-          *
-          * @throws org.json.JSONException
-          * @throws java.io.IOException
-    */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {createWebPropertyUserLinks} integration test with mandatory parameters.")
+     * Positive test case for createWebPropertyUserLinks method with mandatory parameters.
+     *
+     * @throws org.json.JSONException
+     * @throws java.io.IOException
+     */
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {createWebPropertyUserLinks} integration test with mandatory parameters.")
     public void testCreateWebPropertyUserLinksWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:createWebPropertyUserLinks");
@@ -4045,7 +4054,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
         final JSONObject esbResponse = esbRestResponse.getBody();
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
         Assert.assertEquals(esbResponse.getString("kind"), "analytics#entityUserLink");
-        String userLinkId=esbResponse.getString("id");
+        String userLinkId = esbResponse.getString("id");
         connectorProperties.put("userLinkId", userLinkId);
 
     }
@@ -4056,8 +4065,8 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {updateWebPropertyUserLinks} integration test with mandatory parameters.",
-            dependsOnMethods = {"testCreateWebPropertyUserLinksWithMandatoryParameters"   })
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {updateWebPropertyUserLinks} integration test with mandatory parameters.",
+            dependsOnMethods = {"testCreateWebPropertyUserLinksWithMandatoryParameters"})
     public void testUpdateWebPropertyUserLinksWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:updateWebPropertyUserLinks");
@@ -4066,7 +4075,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
         final JSONObject esbResponse = esbRestResponse.getBody();
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
         Assert.assertEquals(esbResponse.getString("kind"), "analytics#entityUserLink");
-        String userLinkId=esbResponse.getString("id");
+        String userLinkId = esbResponse.getString("id");
         connectorProperties.put("userLinkId", userLinkId);
 
     }
@@ -4077,7 +4086,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {createWebPropertyUserLinks} integration test with Negative parameters.")
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {createWebPropertyUserLinks} integration test with Negative parameters.")
     public void testCreateWebPropertyUserLinksWithNegativeParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:createWebPropertyUserLinks");
@@ -4092,10 +4101,11 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
 
     /**
      * Negative test case for updateWebPropertyUserLinks method with Negative parameters.
+     *
      * @throws org.json.JSONException
      * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {updateWebPropertyUserLinks} integration test with Negative parameters.")
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {updateWebPropertyUserLinks} integration test with Negative parameters.")
     public void testUpdateWebPropertyUserLinksWithNegativeParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:updateWebPropertyUserLinks");
@@ -4107,12 +4117,12 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
     }
 
     /**
-          * Positive test case for updateWebProperties method with mandatory parameters.
-          *
-          * @throws org.json.JSONException
-          * @throws java.io.IOException
+     * Positive test case for updateWebProperties method with mandatory parameters.
+     *
+     * @throws org.json.JSONException
+     * @throws java.io.IOException
      */
-    @Test(groups = { "wso2.esb" }, description = "googleanalytics {updateWebProperties} integration test with mandatory parameters.")
+    @Test(groups = {"wso2.esb"}, description = "googleanalytics {updateWebProperties} integration test with mandatory parameters.")
     public void testUpdateWebPropertiesWithMandatoryParameters() throws IOException, JSONException {
 
         esbRequestHeadersMap.put("Action", "urn:updateWebProperties");
@@ -4121,7 +4131,7 @@ public class GoogleanalyticsConnectorIntegrationTest extends ConnectorIntegratio
         final JSONObject esbResponse = esbRestResponse.getBody();
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
         Assert.assertEquals(esbResponse.getString("kind"), "analytics#webproperty");
-        String userLinkId=esbResponse.getString("id");
+        String userLinkId = esbResponse.getString("id");
         connectorProperties.put("userLinkId", userLinkId);
 
     }

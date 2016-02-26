@@ -19,16 +19,16 @@
 
 <template name="insertGoals" xmlns="http://ws.apache.org/ns/synapse">
 
-    <parameter name="accountId" description="Account ID to retrieve the views." />
-    <parameter name="webPropertyId" description="Returns response with indentations and line breaks." />
-    <parameter name="profileId" description="Alternative to userIp." />
-    <parameter name="fields" description="option results in response." />
+    <parameter name="accountId" description="Account ID to retrieve the views."/>
+    <parameter name="webPropertyId" description="Returns response with indentations and line breaks."/>
+    <parameter name="profileId" description="Alternative to userIp."/>
+    <parameter name="fields" description="option results in response."/>
 
     <sequence>
-        <property name="uri.var.accountId" expression="$func:accountId" />
-        <property name="uri.var.webPropertyId" expression="$func:webPropertyId" />
-        <property name="uri.var.profileId" expression="$func:profileId" />
-        <property name="uri.var.fields" expression="$func:fields" />
+        <property name="uri.var.accountId" expression="$func:accountId"/>
+        <property name="uri.var.webPropertyId" expression="$func:webPropertyId"/>
+        <property name="uri.var.profileId" expression="$func:profileId"/>
+        <property name="uri.var.fields" expression="$func:fields"/>
         <property name="uri.var.apiParameters" value=""/>
         <payloadFactory media-type="json">
             <format>
@@ -38,8 +38,8 @@
                 }
             </format>
             <args>
-                <arg expression="get-property('uri.var.name')" />
-                <arg expression="get-property('uri.var.adWordsAccounts')" />
+                <arg expression="get-property('uri.var.name')"/>
+                <arg expression="get-property('uri.var.adWordsAccounts')"/>
             </args>
         </payloadFactory>
         <filter xpath="(not(get-property('uri.var.fields') = '' or (not(string(get-property('uri.var.fields'))))))">
@@ -51,18 +51,19 @@
 
         <call>
             <endpoint>
-                <http method="post" uri-template="{+uri.var.apiUrl}/analytics/v3/management/accounts/{+uri.var.accountId}/webproperties/{+uri.var.webPropertyId}/profiles/{+uri.var.profileId}/goals?{+uri.var.apiParameters}" />
+                <http method="post"
+                      uri-template="{+uri.var.apiUrl}/analytics/v3/management/accounts/{+uri.var.accountId}/webproperties/{+uri.var.webPropertyId}/profiles/{+uri.var.profileId}/goals?{+uri.var.apiParameters}"/>
             </endpoint>
         </call>
 
         <!-- Remove custom Headers from the API Response -->
-        <header name="X-Frame-Options" action="remove" scope="transport" />
-        <header name="Expires" action="remove" scope="transport" />
-        <header name="X-XSS-Protection" action="remove" scope="transport" />
-        <header name="Alternate-Protocol" action="remove" scope="transport" />
-        <header name="X-Content-Type-Options" action="remove" scope="transport" />
-        <header name="Alt-Svc" action="remove" scope="transport" />
-        <header name="Cache-Control" action="remove" scope="transport" />
-        <header name="Pragma" action="remove" scope="transport" />
+        <header name="X-Frame-Options" action="remove" scope="transport"/>
+        <header name="Expires" action="remove" scope="transport"/>
+        <header name="X-XSS-Protection" action="remove" scope="transport"/>
+        <header name="Alternate-Protocol" action="remove" scope="transport"/>
+        <header name="X-Content-Type-Options" action="remove" scope="transport"/>
+        <header name="Alt-Svc" action="remove" scope="transport"/>
+        <header name="Cache-Control" action="remove" scope="transport"/>
+        <header name="Pragma" action="remove" scope="transport"/>
     </sequence>
 </template>

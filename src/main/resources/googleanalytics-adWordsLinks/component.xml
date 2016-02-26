@@ -18,26 +18,27 @@
 -->
 
 <component name="googleanalytics-adWordsLinks" type="synapse/template">
-   <subComponents>
-      <component name="listAdWordsLinks">
-         <file>listAdWordsLinks.xml</file>
-         <description>Retrieve a list of adWordsLinks from GoogleAnalytics account.</description>
-      </component>
-      <component name="createAdWordsLink">
-         <file>createAdWordsLink.xml</file>
-         <description>Create a new adWordsLink in GoogleAnalytics account using the provided Parameters.</description>
-      </component>
-      <component name="getAdWordsLink">
-         <file>getAdWordsLink.xml</file>
-         <description>Retrieve details of a adWordsLink identified by the provided adWordsLink ID.</description>
-      </component>
-      <component name="updateAdWordsLink">
-         <file>updateAdWordsLink.xml</file>
-         <description>Update details of the adWordsLink identified by the provided adWordsLink ID.</description>
-      </component>
-      <component name="patchAdWordsLink">
-         <file>patchAdWordsLink.xml</file>
-         <description>Updates an existing webProperty-AdWords link.</description>
-      </component>
-   </subComponents>
+    <subComponents>
+        <component name="listAdWordsLinks">
+            <file>listAdWordsLinks.xml</file>
+            <description>Retrieve a list of adWordsLinks from GoogleAnalytics account.</description>
+        </component>
+        <component name="createAdWordsLink">
+            <file>createAdWordsLink.xml</file>
+            <description>Create a new adWordsLink in GoogleAnalytics account using the provided Parameters.
+            </description>
+        </component>
+        <component name="getAdWordsLink">
+            <file>getAdWordsLink.xml</file>
+            <description>Retrieve details of a adWordsLink identified by the provided adWordsLink ID.</description>
+        </component>
+        <component name="updateAdWordsLink">
+            <file>updateAdWordsLink.xml</file>
+            <description>Update details of the adWordsLink identified by the provided adWordsLink ID.</description>
+        </component>
+        <component name="patchAdWordsLink">
+            <file>patchAdWordsLink.xml</file>
+            <description>Updates an existing webProperty-AdWords link.</description>
+        </component>
+    </subComponents>
 </component>
