@@ -27,7 +27,7 @@
     <parameter name="kind" description="The starting index of the resources."/>
     <parameter name="fields" description="option results in response."/>
     <parameter name="permissions" description="The starting index of the resources."/>
-    <parameter name="userRef" description="option results in response."/>
+    <parameter name="userRef" description="Option results for user reference in response."/>
 
     <sequence>
         <property name="uri.var.accountId" expression="$func:accountId"/>

@@ -24,7 +24,7 @@
     <parameter name="webPropertyId" description="Returns response with indentations and line breaks."/>
     <parameter name="profileId" description="Alternative to userIp."/>
     <parameter name="goalId" description="The starting index of the resources."/>
-    <parameter name="fields" description="option results in response."/>
+    <parameter name="fields" description="Option results in response."/>
 
     <sequence>
         <property name="uri.var.accountId" expression="$func:accountId"/>
