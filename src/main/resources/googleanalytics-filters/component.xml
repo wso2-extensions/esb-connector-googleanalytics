@@ -21,7 +21,7 @@
     <subComponents>
         <component name="listFilters">
             <file>listFilters.xml</file>
-            <description>Retrieve a list of filters from GoogleAnalytics account.</description>
+            <description>Lists filters from GoogleAnalytics account.</description>
         </component>
         <component name="getFilter">
             <file>getFilter.xml</file>

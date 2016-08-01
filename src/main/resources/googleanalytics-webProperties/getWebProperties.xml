@@ -21,7 +21,7 @@
 
     <parameter name="accountId" description="Account ID to retrieve the views."/>
     <parameter name="webPropertyId" description="Returns response with indentations and line breaks."/>
-    <parameter name="fields" description="option results in response."/>
+    <parameter name="fields" description="Option fields results in response."/>
 
     <sequence>
         <property name="uri.var.accountId" expression="$func:accountId"/>

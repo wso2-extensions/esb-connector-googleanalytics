@@ -55,7 +55,6 @@
                           expression="fn:concat(get-property('uri.var.apiParameters'),'start-index=',get-property('uri.var.startIndex'))"/>
             </then>
         </filter>
-
         <call>
             <endpoint>
                 <http method="get"
